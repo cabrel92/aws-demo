@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome — AWS Developers’ Course 2025</title>
+  <meta name="description" content="Welcome page for new students registering to the AWS Developers’ Course in 2025." />
+  <style>
+    :root {
+      --aws-orange: #ff9900;
+      --bg: #0b0f14;
+      --card: #0f1720;
+      --text: #e6edf3;
+      --muted: #9fb0c3;
+      --ring: rgba(255, 153, 0, 0.35);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 85% -10%, rgba(255,153,0,.18), transparent 40%) ,
+                  radial-gradient(900px 700px at -10% 90%, rgba(255,153,0,.12), transparent 40%),
+                  var(--bg);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: min(920px, 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.0)) , var(--card);
+      border: 1px solid rgba(148,163,184,0.16);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+      overflow: clip;
+    }
+    .header {
+      display: grid;
+      grid-template-columns: 88px 1fr auto;
+      gap: 18px;
+      align-items: center;
+      padding: 22px 22px 0 22px;
+    }
+    .logo-wrap {
+      width: 88px; height: 88px; display: grid; place-items: center;
+      border-radius: 16px; border: 1px solid rgba(255,153,0,.35);
+      background: linear-gradient(180deg, rgba(255,153,0,.08), rgba(255,153,0,.02));
+    }
+    .logo-wrap img { width: 72px; height: auto; display: block; }
+    .title h1 {
+      font-size: clamp(24px, 3.6vw, 36px);
+      line-height: 1.1;
+      margin: 0 0 6px 0;
+    }
+    .title p { margin: 0; color: var(--muted); font-size: clamp(14px, 2vw, 16px); }
+    .badge { 
+      border: 1px solid rgba(255,153,0,.35); color: var(--aws-orange);
+      padding: 8px 12px; border-radius: 999px; font-weight: 600; letter-spacing: .3px;
+      background: linear-gradient(180deg, rgba(255,153,0,.10), rgba(255,153,0,.02));
+      box-shadow: 0 0 0 6px var(--ring);
+    }
+    .body {
+      padding: 22px;
+      display: grid; gap: 18px;
+    }
+    .welcome {
+      padding: 18px; border-radius: 14px; border: 1px dashed rgba(148,163,184,0.35);
+      background: rgba(255,255,255,0.02);
+    }
+    .welcome h2 { margin: 0 0 8px 0; font-size: clamp(20px, 3vw, 28px); }
+    .welcome p { margin: 0; color: var(--muted); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .stat {
+      border: 1px solid rgba(148,163,184,0.18);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+      border-radius: 14px; padding: 18px;
+    }
+    .stat h3 { margin: 0; font-size: 14px; color: var(--muted); font-weight: 500; }
+    .stat .value { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-top: 6px; }
+    .foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 0 22px 20px 22px; }
+    .foot small { color: var(--muted); }
+    .cta { text-decoration: none; background: var(--aws-orange); color: #111; font-weight: 700; padding: 12px 16px; border-radius: 12px; box-shadow: 0 10px 20px rgba(255,153,0,.25); }
+    .cta:focus-visible { outline: 3px dashed var(--aws-orange); outline-offset: 4px; }
+    .sr-only { position: absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+    .testimonial { border-left: 4px solid orange; padding-left: 12px; font-style: italic; }
+  </style>
+</head>
+<body>
+  <main class="card" data-students="205"> <!-- change data-students to your real number -->
+    <header class="header">
+      <div class="logo-wrap" aria-hidden="true">
+        <!-- Official AWS wordmark via Wikimedia Commons (Apache-2.0; may be trademark-protected).  -->
+        <!-- If the image doesn't load in your environment, replace the src with a local file like aws-logo.svg -->
+        <img alt="AWS logo" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" />
+      </div>
+      <div class="title">
+        <h1>Welcome to the <span style="color: var(--aws-orange)">AWS Developers’ Course</span> — 2025</h1>
+        <p>Your cloud journey starts here. We're thrilled to have you on board!</p>
+      </div>
+      <div class="badge" aria-label="Course year">2025 Cohort</div>
+    </header>
+
+    <section class="body">
+      <div class="welcome">
+        <h2>Hi there, future builder! 👋</h2>
+        <p>Thanks for registering to my AWS training course. Below is the current number of students who have already joined. Let’s build something amazing together on AWS.</p>
+      </div>
+
+      <div class="stats" role="region" aria-label="Registration statistics">
+        <div class="stat" aria-live="polite">
+          <h3>Already Registered</h3>
+          <div class="value" id="registeredCount">—</div>
+        </div>
+        <div class="stat">
+          <h3>Course Focus</h3>
+          <div class="value" style="font-size:22px; font-weight:700; line-height:1.2">Serverless • Containers • IaC</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <small>Logo © Amazon Web Services; used per Apache-2.0 license and subject to AWS trademark guidelines.</small>
+      <a class="cta" href="#" onclick="alert('Welcome aboard!'); return false;">Start Orientation</a>
+    </footer>
+  </main>
+
+  <div id="testimony-container">Loading testimony...</div>
+  <article id="testimonial">
+    <blockquote>
+      “This AWS Developers’ Course changed my career. I went from zero to cloud hero in just a few months!”
+    </blockquote>
+    <p>— Alex Johnson, Cloud Engineer</p>
+  </article>
+  <script>
+    // --- Configure the number of students here (or just edit the data-students attribute on <main>) ---
+    (function() {
+      const root = document.querySelector('main');
+      const el = document.getElementById('registeredCount');
+      const n = Number(root.getAttribute('data-students')) || 0;
+      el.textContent = n.toLocaleString(undefined);
+      // Optional: reflect the count in the page title for accessibility
+      document.title = `Welcome — AWS Dev Course 2025 · ${n.toLocaleString()} registered`;
+    })();
+     // fetch("http://cabrel-s3bucket-cors0001.s3-website-us-east-1.amazonaws.com/testimony.html")   
+     fetch("testimony.html")
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById("testimony-container").innerHTML = html;
+      })
+      .catch(err => {
+        document.getElementById("testimony-container").textContent = "Failed to load testimony.";
+        console.error(err);
+      });
+  </script>
+</body>
+</html>

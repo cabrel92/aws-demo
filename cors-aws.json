@@ -1,0 +1,15 @@
+[
+    {
+     "AllowedHeaders": [
+         "Authorization"
+     ],
+     "AllowedMethods": [
+         "GET"
+     ],
+     "AllowedOrigins": [
+         "http://cabrel-demo-s3bucket-cors.s3-website.eu-west-3.amazonaws.com"
+     ],
+     "ExposeHeaders": [],
+     "MaxAgeSeconds": 3000 
+    }
+]
